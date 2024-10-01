@@ -1,16 +1,8 @@
 # Etherleak Vulnerability Checker
 
 This Python script helps to detect the Etherleak (CVE-2003-0001) vulnerability on a target host by analyzing the padding data in network packets. The script uses Scapy to send various types of requests (ICMP, ARP, or TCP) and checks if the responses contain any padding data that could potentially leak sensitive memory contents.
-Features
-
-- Supports ICMP (Ping), ARP, and TCP requests to trigger padding data in network responses.
-- Customizable TCP port for checking services that might leak data (default: port 445).
-- Captures and analyzes padding data for variation across multiple packets, which could indicate a memory leak vulnerability.
-- Provides clear output on whether the target is vulnerable based on detected variations in padding data.
-- Designed to be flexible, user-friendly, and easily customizable for different testing scenarios.
 
 ## Etherleak Overview
-
 Etherleak is a vulnerability where network drivers improperly pad Ethernet frames with leftover memory. Attackers can exploit this by sending certain requests (ICMP, ARP, or TCP) and analyzing the response packets to see if they leak sensitive data from system memory.
 ### Prerequisites
 - Python 3.x or higher
@@ -20,7 +12,6 @@ Etherleak is a vulnerability where network drivers improperly pad Ethernet frame
 ```
 
 ## Usage
-
 The script supports three protocols for probing the target: ARP, ICMP, or TCP. 
 If using TCP, you can specify a port, with the default being 445 (commonly used by SMB).
 
